@@ -36,6 +36,37 @@ const HeartRiskForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    const age = formData.Age;
+    const stDepression = formData.STDepression;
+    const numMajorVessels = formData.NumMajorVessels;
+    const maxHeartRate = formData.MaxHeartRate;
+    const serumCholesterol = formData.SerumCholesterol;
+
+    if (age < 10 || age > 90) {
+      alert('Age must be between 10 and 90.');
+      return;
+    }
+
+    if (stDepression < 0) {
+        alert('ST Depression must be a positive value.');
+      return;
+    }
+
+    if (numMajorVessels < 0 || numMajorVessels > 4) {
+        alert('Number of Major Vessels must be between 0 and 4.');
+      return;
+    }
+
+    if (maxHeartRate < 60 || maxHeartRate > 220) {
+        alert('Max Heart Rate must be between 60 and 220.');
+      return;
+    }
+
+    if (serumCholesterol < 100 || serumCholesterol > 400) {
+        alert('Serum Cholesterol must be between 100 and 400 mg/dL.');
+      return;
+    }
+
     console.log(JSON.stringify({ "input_data": formData }));
 
     fetch('https://german.azurewebsites.net/api/prediction', {
