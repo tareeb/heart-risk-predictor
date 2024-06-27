@@ -19,7 +19,7 @@ body {
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
-    transition: all 0.3s;
+    transition: all 0.5s;
 }
 
 .container:hover {
@@ -134,6 +134,7 @@ span {
   
   .result-status {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     margin-bottom: 20px;

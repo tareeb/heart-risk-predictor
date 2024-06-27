@@ -14,8 +14,9 @@ const HeartResults = ({ result, formData }) => {
   }, [formData]);
 
   const generateRecommendations = (formData) => {
-
+    console.log(formData);
     const recs = [];
+
     Object.keys(formData).forEach(key => {
       const param = healthdata.parameters[key];
       if (param) {
@@ -28,6 +29,8 @@ const HeartResults = ({ result, formData }) => {
         }
       }
     });
+
+    console.log(recs);
     setRecommendations(recs);  
   };
 
